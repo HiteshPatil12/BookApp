@@ -11,10 +11,12 @@ export default class AddOption extends React.Component{
     }
     render(){
         return (
-        <form onSubmit={this.handleOnFormSubmit}>
-            <input type="text" name="option"></input>
-            <button onClick= {this.props.addBook}>Add Book</button>
-        </form>
+            <div>
+                <form onSubmit={this.handleOnFormSubmit}>
+                    <input className='add-option__input' type="text" name="option"></input>
+                    <button className='button' onClick= {this.props.addBook}>Add Book</button>
+                </form>
+            </div>
         )
     }
 }

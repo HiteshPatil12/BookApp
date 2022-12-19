@@ -17,7 +17,7 @@ export default class BookApp extends React.Component{
         this.state = {
             // books : ['Lava', 'Autobography of a Yogi', 'Yayati']
             books : [],
-            selectedOption: undefined
+            selectedOption: undefined,
         }
     }
     componentDidMount(){
@@ -48,6 +48,7 @@ export default class BookApp extends React.Component{
         this.setState(()=> ({
             selectedOption:this.state.books[randomIndex]
         }))
+        console.log('handlePick clicked')
     }
     handleRemoveBook(book){
         console.log(this.state.books)
@@ -77,7 +78,7 @@ export default class BookApp extends React.Component{
             <Header title={title} subtitle={subtitle}/>
             <Options books = {this.state.books} deleteAll = {this.handleRemoveAll} dropBook = {this.handleRemoveBook}/>
             <AddOption handleOnFormSubmit = {this.handleOnFormSubmit}/>
-            <Action pickbook = {this.handlePick}/>
+            <Action pickbook = {this.handlePick} hasOption = {this.state.books.length > 0}/>
             <OptionModal selectedOption = {this.state.selectedOption} handleClearSelectedOption = {this.handleClearSelectedOption}/>
             </div>
         )

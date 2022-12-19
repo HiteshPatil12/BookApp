@@ -1,9 +1,7 @@
 import React from 'react';
 const Action = (props) =>{
     return(
-        <div>
-            <button onClick={props.pickbook}>Help me decide a book?</button>
-        </div>
+            <button className='big-button' onClick={props.pickbook}  disabled={!props.hasOption}>Suggest Book</button>
     )
 }
 export default Action
